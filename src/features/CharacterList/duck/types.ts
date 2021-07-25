@@ -1,8 +1,11 @@
 import { AsyncThunk } from "@reduxjs/toolkit";
 
 export type Character = {
-  img: string,
+  id: number,
+  img?: string,
   name: string,
+  class: string,
+  level: number,
 };
 
 export type State = {

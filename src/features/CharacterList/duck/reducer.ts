@@ -1,5 +1,5 @@
 import * as actions from 'features/CharacterList/duck/actions';
-import * as T from 'features/CharacterList/types/types';
+import * as T from 'features/CharacterList/duck/types';
 import { createReducer, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: T.State = {

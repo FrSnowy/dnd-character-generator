@@ -31,7 +31,7 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
-    "serve": "webpack serve"
+    "start": "webpack serve"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
