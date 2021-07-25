@@ -10,4 +10,7 @@ const store = createStore(
 	applyMiddleware(routerMiddleware(history), thunk),
 );
 
+export type State = ReturnType<typeof rootReducer>;
+export type Dispatch = typeof store.dispatch;
+
 export default store;
