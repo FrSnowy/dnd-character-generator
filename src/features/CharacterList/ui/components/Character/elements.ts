@@ -1,13 +1,16 @@
-import styled from 'styled-components';
-import * as SharedElements from 'features/CharacterList/ui/elements';
+import styled from "styled-components";
+import * as SharedElements from "features/CharacterList/ui/elements";
 
-export const Container = styled(SharedElements.SingleCharacterContainer)<{ bgImg?: string }>`
+export const Container = styled(SharedElements.SingleCharacterContainer)<{
+  bgImg?: string;
+}>`
   position: relative;
   top: 0;
   left: 0;
   background-color: rgba(9, 21, 38, 0.07);
-  border: 1px solid  rgba(9, 21, 38, 0.3);
-  background-image: ${props => props.bgImg ? `url("${props.bgImg}")` : undefined};
+  border: 1px solid rgba(9, 21, 38, 0.3);
+  background-image: ${(props) =>
+    props.bgImg ? `url("${props.bgImg}")` : undefined};
 `;
 
 export const Mask = styled.div`

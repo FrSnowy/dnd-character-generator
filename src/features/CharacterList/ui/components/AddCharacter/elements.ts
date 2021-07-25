@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import * as SharedElements from 'features/CharacterList/ui/elements';
+import styled from "styled-components";
+import * as SharedElements from "features/CharacterList/ui/elements";
 
 export const IconContainer = styled.div`
   width: 64px;
@@ -18,14 +18,14 @@ export const IconContainer = styled.div`
 
 export const Container = styled(SharedElements.SingleCharacterContainer)`
   background-color: rgba(9, 21, 38, 0.07);
-  border: 2px dashed  rgba(9, 21, 38, 0.3);
+  border: 2px dashed rgba(9, 21, 38, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
   transition: border 125ms ease-in-out;
 
   &:hover {
-    border: 2px dashed  rgba(9, 21, 38, 0.6);
+    border: 2px dashed rgba(9, 21, 38, 0.6);
 
     ${IconContainer} {
       border: 2px solid rgba(9, 21, 38, 0.6);

@@ -1,15 +1,15 @@
 {
-	"compilerOptions": {
-		"target": "es5",
-		"lib": ["ESNext", "DOM"],
-		"strict": true,
-		"module": "esnext",
-		"moduleResolution": "node",
-		"isolatedModules": true,
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["ESNext", "DOM"],
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
     "sourceMap": true,
-		"baseUrl": "./src",
-	},
-	"include": ["src"]
+    "baseUrl": "./src"
+  },
+  "include": ["src"]
 }

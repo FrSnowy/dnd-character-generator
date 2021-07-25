@@ -1,7 +1,7 @@
-import { createBrowserHistory } from 'history';
+import { createBrowserHistory } from "history";
 
 export const history = createBrowserHistory({
-	basename: '/',
+  basename: "/",
 });
 
 export default history;

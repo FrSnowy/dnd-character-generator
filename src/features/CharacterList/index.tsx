@@ -1,13 +1,13 @@
-import React from 'react';
-import View from 'features/CharacterList/ui';
-import useAction from 'shared/hooks/useAction';
-import connect from 'features/CharacterList/connect';
-import * as T from 'features/CharacterList/duck/types';
+import React from "react";
+import View from "features/CharacterList/ui";
+import useAction from "shared/hooks/useAction";
+import connect from "features/CharacterList/connect";
+import * as T from "features/CharacterList/duck/types";
 
-const CharacterListController : React.FC<T.Props> = (props) => {
+const CharacterListController: React.FC<T.Props> = (props) => {
   useAction(props.actions.getCharacters);
-  return <View {...props} />
-}
+  return <View {...props} />;
+};
 
 /**
  * Created characters list

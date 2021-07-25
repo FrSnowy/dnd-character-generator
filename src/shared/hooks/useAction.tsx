@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const useAction = (action: Function, condition: boolean = true) => {
   React.useEffect(() => {

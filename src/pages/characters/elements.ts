@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const TitleContainer = styled.div`
   margin: 16px 0;

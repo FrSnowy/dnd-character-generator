@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const PageContainer = styled.div<{ direction: 'row' | 'column' }>`
+const PageContainer = styled.div<{ direction: "row" | "column" }>`
   display: flex;
   width: 960px;
   margin: 0 auto;
-  flex-direction: ${props => props.direction};
+  flex-direction: ${(props) => props.direction};
 `;
 
 export default PageContainer;
