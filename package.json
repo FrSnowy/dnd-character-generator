@@ -1,8 +1,8 @@
 {
-  "name": "my-webpack-project",
-  "version": "1.0.0",
-  "description": "My webpack project",
-  "main": "index.ts",
+  "name": "character-generator",
+  "version": "0.1.0",
+  "description": "d&d web character easy generator",
+  "main": "index.tsx",
   "author": "Gafiatullin Albert",
   "license": "MIT",
   "devDependencies": {
