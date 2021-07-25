@@ -1,7 +1,7 @@
 {
-  "name": "character-generator",
+  "name": "dnd-character-generator",
   "version": "0.1.0",
-  "description": "d&d web character easy generator",
+  "description": "Easy D&D charlist generator",
   "main": "index.tsx",
   "author": "Gafiatullin Albert",
   "license": "MIT",
