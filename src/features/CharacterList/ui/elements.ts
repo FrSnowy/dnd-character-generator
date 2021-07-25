@@ -12,15 +12,10 @@ export const SingleCharacterContainer = styled.div`
   width: 100%;
   height: 200px;
   color: #fff;
-  transition: box-shadow 125ms ease-in-out;
 
   & > * {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-  }
-
-  &:hover {
-    box-shadow: 2px 5px 5px rgb(0, 0, 0, 0.35);
   }
 `;

@@ -9,7 +9,7 @@ const CharactersPage : React.FC<{}> = () => (
   <PageContainer direction="column">
     <Elements.TitleContainer>
       <Text size="title" bold color="rgb(9, 21, 52)">
-        {getLocale('characters', 'ru', true)}
+        {getLocale('characters', 'en', true)}
       </Text>
     </Elements.TitleContainer>
     <CharacterListController />
