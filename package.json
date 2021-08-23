@@ -33,7 +33,8 @@
     "watch": "webpack --watch",
     "start": "webpack serve",
     "docker:build": "docker build -f Dockerfile.dev -t character-generator-front .",
-    "docker:start": "docker run -d -p 80:80 -v %cd%/src:/app/src -v %cd%/index.html:/app/index.html --name=character-generator-front character-generator-front yarn start"
+    "docker:start": "docker run -d -p 80:80 -v %cd%/src:/app/src -v %cd%/index.html:/app/index.html --name=character-generator-front character-generator-front yarn start",
+    "docker:stop": "docker stop character-generator-front"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
