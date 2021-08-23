@@ -31,7 +31,9 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "docker:build": "docker build -f Dockerfile.dev -t character-generator-front .",
+    "docker:start": "docker run -d -p 80:80 -v %cd%/src:/app/src -v %cd%/index.html:/app/index.html --name=character-generator-front character-generator-front yarn start"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
