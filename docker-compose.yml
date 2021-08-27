@@ -12,6 +12,17 @@ services:
       context: "./front"
       dockerfile: Dockerfile.dev
     command: yarn start
+  back:
+    container_name: character-generator-back
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/app
+    build:
+      context: "./backend"
+      dockerfile: Dockerfile.dev
+    command: go run main.go
   db:
     container_name: character-generator-db
     image: postgres
