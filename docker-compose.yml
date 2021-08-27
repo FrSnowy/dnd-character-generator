@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   front:
-    container_name: charcater-geenrator-front
+    container_name: character-generator-front
     restart: unless-stopped
     ports:
       - "80:80"
@@ -12,3 +12,13 @@ services:
       context: "./front"
       dockerfile: Dockerfile.dev
     command: yarn start
+  db:
+    container_name: character-generator-db
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: character-generator
+    ports:
+      - "5432:5432"
