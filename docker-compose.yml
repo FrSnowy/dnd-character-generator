@@ -22,7 +22,7 @@ services:
     build:
       context: "./backend"
       dockerfile: Dockerfile.dev
-    command: go run main.go
+    command: watchrun go run main.go
   db:
     container_name: character-generator-db
     image: postgres
