@@ -1,12 +1,21 @@
 import React from 'react';
 import Container from 'shared/components/Container';
 import * as Elements from './elements';
+import { HeaderProps } from './types';
 
-const Header = () => {
+const Header : React.FC<HeaderProps> = ({ fixed }) => {
   return (
-    <Elements.Container>
+    <Elements.Container fixed={fixed}>
       <Container direction="row">
-        123
+        <Elements.Name>
+          D&amp;D Character Generator
+        </Elements.Name>
+        <Elements.Articles>
+          
+        </Elements.Articles>
+        <Elements.Controls>
+
+        </Elements.Controls>
       </Container>
     </Elements.Container>
   )

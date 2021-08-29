@@ -8,4 +8,4 @@ const AuthPage = () => {
   )
 }
 
-export default withHeader(AuthPage);
+export default withHeader()(AuthPage);
