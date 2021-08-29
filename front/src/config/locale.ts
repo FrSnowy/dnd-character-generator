@@ -1,16 +1,20 @@
-const locale = {
-  characters: {
-    ru: "персонажи",
-    en: "characters",
-  },
-};
+import { setTranslations, setLocale } from "react-i18nify";
+import authLocale from "pages/auth/locale";
 
-const getLocale = (
-  key: keyof typeof locale,
-  lang: "ru" | "en",
-  capitalize?: boolean
-) => {
-  if (!capitalize) return locale[key][lang];
-  return `${locale[key][lang][0].toUpperCase()}${locale[key][lang].substr(1)}`;
-};
-export default getLocale;
+export type Languages = 'ru' | 'en';
+export type Locale = Record<Languages, any>;
+
+export const createLocale = () => {
+  setTranslations({
+    en: {
+      authLocale: authLocale.en,
+    },
+    ru: {
+      authLocale: authLocale.ru,
+    },
+  });
+}
+
+export const setCurrentLocale = (lang: Languages) => {
+  setLocale(lang);
+}

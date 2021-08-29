@@ -1,5 +1,5 @@
 import React from "react";
-import CharactersPage from "pages/characters";
+import AuthPage from "pages/auth";
 
 type Route = {
   component: React.FC<any>;
@@ -9,7 +9,7 @@ type Route = {
 
 const routes: Array<Route> = [
   {
-    component: CharactersPage,
+    component: AuthPage,
     path: "/",
     exact: true,
   },

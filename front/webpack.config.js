@@ -13,6 +13,10 @@ const config = {
     open: true,
     host: "0.0.0.0",
     port: 80,
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: 1000
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
