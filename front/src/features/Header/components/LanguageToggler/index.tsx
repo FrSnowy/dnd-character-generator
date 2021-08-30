@@ -16,4 +16,7 @@ const LanguageToggler : React.FC<AppStoreProps> = ({ AppStore }) => (
   </Elements.LanguageToggler>
 )
 
+/**
+ * Language toggler injected and wrapped with container for header
+ */
 export default inject('AppStore')(observer(LanguageToggler))
