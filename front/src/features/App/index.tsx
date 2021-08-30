@@ -2,7 +2,8 @@ import React from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import routes from "config/routes";
 import history from "config/history";
-import { createLocale, setCurrentLocale } from "config/locale";
+import { inject, observer } from "mobx-react";
+import { AppStoreProps } from "./store/types";
 
 const listOfRouteComponents: Array<JSX.Element> = routes.map((route) => (
   <Route path={route.path} exact={route.exact} key={route.path} component={route.component} />
@@ -12,10 +13,9 @@ const listOfRouteComponents: Array<JSX.Element> = routes.map((route) => (
  * Components resolves routes from config/routes to react-router-dom routes
  * @returns Switch-wrapped routes
  */
-const App: React.FC<{}> = () => {
+const App: React.FC<AppStoreProps> = ({ AppStore }) => {
   React.useEffect(() => {
-    createLocale();
-    setCurrentLocale('ru');
+    AppStore!.changeLang(AppStore!.lang);
   }, []);
 
   return (
@@ -25,4 +25,4 @@ const App: React.FC<{}> = () => {
   );
 }
 
-export default App;
+export default inject('AppStore')(observer(App));

@@ -3,6 +3,7 @@ import { HeaderContainerProps } from './types';
 
 export const Container = styled.div<HeaderContainerProps>`
   width: 100%;
+  display: flex;
   position: ${({ fixed }) => fixed ? 'fixed' : undefined};
   top: 0;
   left: 0;
@@ -17,6 +18,12 @@ export const Container = styled.div<HeaderContainerProps>`
   ${props => !props.fixed && css`
     margin-bottom: 1.5em;
   `};
+`;
+
+export const InnerContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
 `;
 
 export const Name = styled.div`
@@ -34,4 +41,9 @@ export const Controls = styled.div`
 
 export const Articles = styled.div`
   width: calc(100% - 416px);
+`;
+
+export const LanguageToggler = styled.div`
+  width: 100px;
+  font-size: 12px;
 `;
