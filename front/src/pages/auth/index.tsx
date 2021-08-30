@@ -4,6 +4,7 @@ import { t, Translate } from 'react-i18nify';
 import { withHeader } from 'shared/hocs/withHeader';
 import Text from 'shared/components/Text';
 import useInput from 'shared/hooks/useInput';
+import Button from 'shared/components/Button';
 
 const AuthPage = () => {
   const emailInput = useInput({
@@ -26,6 +27,18 @@ const AuthPage = () => {
       <Elements.FormWrapped>
         {emailInput.view}
         {passwordInput.view}
+        <Elements.FormFooter>
+          <Elements.RegisterButtonContainer>
+            <Button theme='accent'>
+              <Translate value="authLocale.register" />
+            </Button>
+          </Elements.RegisterButtonContainer>
+          <Elements.SignInButtonContainer>
+            <Button type="submit" disabled={!emailInput.value || !passwordInput.value}>
+              <Translate value="authLocale.signIn" />
+            </Button>
+          </Elements.SignInButtonContainer>
+        </Elements.FormFooter>
       </Elements.FormWrapped>
     </Elements.Container>
   )

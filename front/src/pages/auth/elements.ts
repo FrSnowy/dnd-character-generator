@@ -30,3 +30,25 @@ export const FormWrapped = styled.form`
     padding: 4px 8px;
   }
 `;
+
+export const FormFooter = styled.div`
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: 16px;
+`;
+
+export const SignInButtonContainer = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 186px;
+`;
+
+export const RegisterButtonContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 236px;
+`;

@@ -3,7 +3,7 @@ import { observable, action, makeObservable } from 'mobx';
 import { IAppStore } from './types';
 
 class AppStore implements IAppStore {
-  @observable lang: Languages = 'ru';
+  @observable lang: Languages = 'en';
 
   constructor() {
     makeObservable(this);

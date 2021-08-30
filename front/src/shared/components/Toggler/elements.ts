@@ -34,6 +34,7 @@ export const Indicator = styled.div<TogglerTheme & {
   max-width: 16px;
   background-color: #fff;
   border-radius: 50%;
+  transition: left 125ms ease-in-out, transform 125ms ease-in-out;
 
   ${props => props.theme.theme === 'light' && css`
     background-color: rgba(255, 255, 255, 0.8);
