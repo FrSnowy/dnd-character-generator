@@ -42,8 +42,3 @@ export const Controls = styled.div`
 export const Articles = styled.div`
   width: calc(100% - 416px);
 `;
-
-export const LanguageToggler = styled.div`
-  width: 100px;
-  font-size: 12px;
-`;
