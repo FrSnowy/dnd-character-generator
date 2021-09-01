@@ -14,5 +14,5 @@ func main() {
 	})
 
 	http.HandleFunc("/account", handlers.GetAccount(db))
-	http.ListenAndServe(":3000", nil)
+	http.ListenAndServe(":3001", nil)
 }

@@ -1,17 +1,17 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Languages } from 'config/locale';
-import { AppStoreProps } from 'features/App/store/types';
+import { AppModelT } from 'models/AppModel/types';
 import Toggler from 'shared/components/Toggler';
 import * as Elements from './elements';
 
-const LanguageToggler : React.FC<AppStoreProps> = ({ AppStore }) => (
+const LanguageToggler : React.FC<AppModelT> = ({ AppModel }) => (
   <Elements.LanguageToggler>
     <Toggler
       theme='light'
       valuesLocale = {{ left: 'Рус.', right: 'Eng.' }}
-      values = {{ left: 'ru', right: 'en', current: AppStore!.lang }}
-      onClick={v => AppStore!.changeLang(v as Languages)}
+      values = {{ left: 'ru', right: 'en', current: AppModel!.lang }}
+      onClick={v => AppModel!.changeLang(v as Languages)}
     />
   </Elements.LanguageToggler>
 )
@@ -19,4 +19,4 @@ const LanguageToggler : React.FC<AppStoreProps> = ({ AppStore }) => (
 /**
  * Language toggler injected and wrapped with container for header
  */
-export default inject('AppStore')(observer(LanguageToggler))
+export default inject('AppModel')(observer(LanguageToggler))

@@ -1,8 +1,10 @@
-import AppStore from "features/App/store";
+import AppModel from "models/AppModel";
+import RegistrationModel from "models/RegistrationModel";
 import RoutingStore from "./history";
 
 const rootStore = {
-  AppStore,
+  AppModel,
+  RegistrationModel,
   RoutingStore
 };
 

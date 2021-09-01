@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import routes from "config/routes";
 import { inject, observer } from "mobx-react";
-import { AppStoreProps } from "./store/types";
+import { AppModelT } from "models/AppModel/types";
 
 const listOfRouteComponents: Array<JSX.Element> = routes.map((route) => (
   <Route path={route.path} exact={route.exact} key={route.path} component={route.component} />
@@ -12,12 +12,12 @@ const listOfRouteComponents: Array<JSX.Element> = routes.map((route) => (
  * Components resolves routes from config/routes to react-router-dom routes
  * @returns Switch-wrapped routes
  */
-const App: React.FC<AppStoreProps> = ({ AppStore }) => {
+const App: React.FC<AppModelT> = ({ AppModel }) => {
   React.useEffect(() => {
-    AppStore!.changeLang(AppStore!.lang);
+    AppModel!.changeLang(AppModel!.lang);
   }, []);
 
   return <Switch>{listOfRouteComponents}</Switch>;
 }
 
-export default inject('AppStore')(observer(App));
+export default inject('AppModel')(observer(App));

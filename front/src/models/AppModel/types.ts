@@ -1,10 +1,10 @@
 import { Languages } from "config/locale";
 
-export interface IAppStore {
+export interface IAppModel {
   lang: Languages,
   changeLang: (lang: Languages) => void,
 }
 
-export type AppStoreProps = {
-  AppStore?: IAppStore,
+export type AppModelT = {
+  AppModel?: IAppModel,
 };

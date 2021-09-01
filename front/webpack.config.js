@@ -12,7 +12,7 @@ const config = {
   devServer: {
     open: true,
     host: "0.0.0.0",
-    port: 80,
+    port: 3000,
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000

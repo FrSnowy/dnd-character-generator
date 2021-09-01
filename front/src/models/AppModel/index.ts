@@ -1,8 +1,8 @@
 import { Languages, setCurrentLocale } from 'config/locale';
 import { observable, action, makeObservable } from 'mobx';
-import { IAppStore } from './types';
+import { IAppModel } from './types';
 
-class AppStore implements IAppStore {
+class AppModel implements IAppModel {
   @observable lang: Languages = 'en';
 
   constructor() {
@@ -16,5 +16,5 @@ class AppStore implements IAppStore {
   }
 }
 
-const AppStoreInstance = new AppStore();
-export default AppStoreInstance;
+const AppModelInstance = new AppModel();
+export default AppModelInstance;
