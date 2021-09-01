@@ -1,6 +1,6 @@
 import { Locale } from "config/locale";
 
-const authLocale : Locale = {
+const authAndRegisterLocale : Locale = {
   ru: {
     title: 'Войти',
     email: 'E-mail',
@@ -17,4 +17,4 @@ const authLocale : Locale = {
   }
 }
 
-export default authLocale;
+export default authAndRegisterLocale;

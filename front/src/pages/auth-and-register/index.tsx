@@ -1,28 +1,31 @@
 import React from 'react';
 import * as Elements from './elements';
-import { t, Translate } from 'react-i18nify';
+import { Translate } from 'react-i18nify';
 import { withHeader } from 'shared/hocs/withHeader';
 import Text from 'shared/components/Text';
 import useInput from 'shared/hooks/useInput';
 import Button from 'shared/components/Button';
+import history from 'config/history';
 
-const AuthPage = () => {
+const AuthAndRegisterPage = () => {
+  const isRegister = history.location.pathname === '/register';
+
   const emailInput = useInput({
     name: 'email',
     type: 'email',
-    label: <Translate value='authLocale.email'/>,
+    label: <Translate value='authAndRegisterLocale.email'/>,
   });
 
   const passwordInput = useInput({
     name: 'password',
     type: 'password',
-    label: <Translate value='authLocale.password'/>,
+    label: <Translate value='authAndRegisterLocale.password'/>,
   });
 
   return (
     <Elements.Container>
       <Text size='title' bold>
-        <Translate value="authLocale.title" />
+        <Translate value="authAndRegisterLocale.title" />
       </Text>
       <Elements.FormWrapped>
         {emailInput.view}
@@ -30,12 +33,12 @@ const AuthPage = () => {
         <Elements.FormFooter>
           <Elements.RegisterButtonContainer>
             <Button theme='accent'>
-              <Translate value="authLocale.register" />
+              <Translate value="authAndRegisterLocale.register" />
             </Button>
           </Elements.RegisterButtonContainer>
           <Elements.SignInButtonContainer>
             <Button type="submit" disabled={!emailInput.value || !passwordInput.value}>
-              <Translate value="authLocale.signIn" />
+              <Translate value="authAndRegisterLocale.signIn" />
             </Button>
           </Elements.SignInButtonContainer>
         </Elements.FormFooter>
@@ -44,4 +47,4 @@ const AuthPage = () => {
   )
 }
 
-export default withHeader()(AuthPage);
+export default withHeader()(AuthAndRegisterPage);

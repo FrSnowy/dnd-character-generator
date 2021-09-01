@@ -17,6 +17,7 @@ const config = {
       aggregateTimeout: 300,
       poll: 1000
     },
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({

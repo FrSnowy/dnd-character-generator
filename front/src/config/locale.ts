@@ -1,5 +1,5 @@
 import { setTranslations, setLocale } from "react-i18nify";
-import authLocale from "pages/auth/locale";
+import authAndRegisterLocale from "pages/auth-and-register/locale";
 
 export type Languages = 'ru' | 'en';
 export type Locale = Record<Languages, any>;
@@ -7,10 +7,10 @@ export type Locale = Record<Languages, any>;
 export const createLocale = () => {
   setTranslations({
     en: {
-      authLocale: authLocale.en,
+      authAndRegisterLocale: authAndRegisterLocale.en,
     },
     ru: {
-      authLocale: authLocale.ru,
+      authAndRegisterLocale: authAndRegisterLocale.ru,
     },
   });
 }

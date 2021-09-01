@@ -5,12 +5,16 @@ import "normalize.css";
 import rootStore from "config/store";
 import { Provider } from "mobx-react";
 import { createLocale } from "config/locale";
+import { Router } from 'react-router';
+import { browserHistory } from "config/history";
 
 document.addEventListener("DOMContentLoaded", () => {
   createLocale();
   ReactDOM.render(
     <Provider {...rootStore}>
-      <App />
+      <Router history={browserHistory}>
+        <App />
+      </Router>
     </Provider>,
     document.getElementById("root")
   );

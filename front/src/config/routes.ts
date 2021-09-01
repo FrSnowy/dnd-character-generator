@@ -1,5 +1,5 @@
 import React from "react";
-import AuthPage from "pages/auth";
+import AuthAndRegisterPage from "pages/auth-and-register";
 
 type Route = {
   component: React.FC<any>;
@@ -9,10 +9,15 @@ type Route = {
 
 const routes: Array<Route> = [
   {
-    component: AuthPage,
+    component: AuthAndRegisterPage,
     path: "/",
     exact: true,
   },
+  {
+    component: AuthAndRegisterPage,
+    path: "/register",
+    exact: true,
+  }
 ];
 
 export default routes;

@@ -1,7 +1,6 @@
 import React from "react";
-import { Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import routes from "config/routes";
-import history from "config/history";
 import { inject, observer } from "mobx-react";
 import { AppStoreProps } from "./store/types";
 
@@ -18,11 +17,7 @@ const App: React.FC<AppStoreProps> = ({ AppStore }) => {
     AppStore!.changeLang(AppStore!.lang);
   }, []);
 
-  return (
-    <Router history={history}>
-      <Switch>{listOfRouteComponents}</Switch>
-    </Router>
-  );
+  return <Switch>{listOfRouteComponents}</Switch>;
 }
 
 export default inject('AppStore')(observer(App));
