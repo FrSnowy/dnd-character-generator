@@ -1,8 +1,7 @@
-FROM golang:1.16-alpine
+FROM node:latest as build
 WORKDIR /app
-
-RUN go get github.com/loov/watchrun
-
-COPY go.mod .
-COPY go.sum .
-RUN go mod download
+COPY package.json /app/
+RUN yarn install
+RUN npm i -g cross-env
+RUN yarn build
+RUN rm -f .npmrc

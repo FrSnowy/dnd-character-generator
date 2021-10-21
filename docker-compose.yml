@@ -24,7 +24,7 @@ services:
     build:
       context: "./backend"
       dockerfile: Dockerfile.dev
-    command: watchrun go run main.go
+    command: cross-env PORT=3001 yarn start:dev
     networks:
       - internal
   db:
@@ -37,6 +37,8 @@ services:
       POSTGRES_DB: character-generator
     ports:
       - "5432:5432"
+    networks:
+      - internal
   proxy:
     container_name: nginx
     image: nginx
