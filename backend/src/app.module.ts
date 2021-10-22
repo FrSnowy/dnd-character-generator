@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AccountModule } from './account/account.module';
+import { AccountModule } from './v1/account/account.module';
 
 @Module({
   controllers: [],
