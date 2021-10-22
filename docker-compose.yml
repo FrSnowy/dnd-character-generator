@@ -14,19 +14,6 @@ services:
     command: yarn start
     networks:
       - internal
-  back:
-    container_name: character-generator-back
-    restart: unless-stopped
-    ports:
-      - "3001:3001"
-    volumes:
-      - ./backend:/app
-    build:
-      context: "./backend"
-      dockerfile: Dockerfile.dev
-    command: cross-env PORT=3001 yarn start:dev
-    networks:
-      - internal
   db:
     container_name: character-generator-db
     image: postgres
@@ -37,6 +24,21 @@ services:
       POSTGRES_DB: character-generator
     ports:
       - "5432:5432"
+    networks:
+      - internal
+  back:
+    container_name: character-generator-back
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/app
+    build:
+      context: "./backend"
+      dockerfile: Dockerfile.dev
+    command: cross-env PORT=3001 DB_HOST=host.docker.internal DB_PORT=5432 DB_USER=root DB_PASSWORD=root DB_NAME=character-generator yarn start:dev
     networks:
       - internal
   pgadmin:

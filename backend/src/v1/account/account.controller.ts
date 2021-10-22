@@ -1,12 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
+import { CreateAccountDTO } from './account.dto';
 import { AccountService } from './account.service';
 
 @Controller('/v1/account')
 export class AccountController {
-  accountService = new AccountService();
+  constructor(private accountSerivce: AccountService) {}
 
-  @Get('/all')
-  getAccounts() {
-    return this.accountService.getAccount();
+  @Post()
+  createAccount(@Body() accountDTO: CreateAccountDTO) {
+    return this.accountSerivce.createAccount(accountDTO);
   }
 }
