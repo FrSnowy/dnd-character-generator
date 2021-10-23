@@ -1,4 +1,5 @@
 import { Body, Controller, HttpException, HttpStatus, Post } from '@nestjs/common';
+import ERROR_MESSAGE from '../shared/constants/ErrorMessage';
 import { AccountDTO } from './account.dto';
 import { AccountService } from './account.service';
 
@@ -12,10 +13,10 @@ export class AccountController {
     const isAccountExists = await this.accountSerivce.accountExists(accountDTO);
 
     if (!isAccountMailValid) {
-      throw new HttpException('Invalid mail', HttpStatus.UNPROCESSABLE_ENTITY);
+      throw new HttpException(ERROR_MESSAGE.ENTITY_INVALID, HttpStatus.UNPROCESSABLE_ENTITY);
     }
     if (isAccountExists) {
-      throw new HttpException('Mail already exists', HttpStatus.UNPROCESSABLE_ENTITY);
+      throw new HttpException(ERROR_MESSAGE.ENTITY_EXISTS, HttpStatus.UNPROCESSABLE_ENTITY);
     }
     return await this.accountSerivce.createAccount(accountDTO);
   }
