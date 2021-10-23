@@ -44,6 +44,8 @@ services:
   pgadmin:
     container_name: pg-agmin
     image: dpage/pgadmin4:latest
+    logging:
+      driver: none 
     links:
       - db
     depends_on:
